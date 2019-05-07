@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="K19: Wallet">1107ef54db94330044b5927adb9619bd</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter table="x_snc_k19_bf_wallet_transaction">from.userDYNAMIC90d1921e5f510100a9ad2572f2b477fe^ORto.userDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="from.user" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="false" field="to.user" goto="false" newquery="false" operator="DYNAMIC" or="true" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>My Wallet Transaction</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_k19_bf_wallet_transaction</name>
+        <order>20</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_snc_k19_bf.wallet_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 12:35:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>21b7ab94db94330044b5927adb961955</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>My Wallet Transactions</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_app_module_21b7ab94db94330044b5927adb961955</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-16 13:19:04</sys_updated_on>
+        <timeline_page/>
+        <title>My Wallet Transactions</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

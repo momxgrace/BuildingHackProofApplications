@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="status" table="x_snc_k19_bf_wallet_transaction" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In Progress</label>
+            <language>en</language>
+            <name>x_snc_k19_bf_wallet_transaction</name>
+            <sequence>0</sequence>
+            <sys_created_by>pavan.mohan@snc</sys_created_by>
+            <sys_created_on>2019-04-07 17:01:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e1d731a3dba0bb401ad77d668c96197e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+            <sys_updated_on>2019-04-07 17:01:00</sys_updated_on>
+            <value>in_progress</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Success</label>
+            <language>en</language>
+            <name>x_snc_k19_bf_wallet_transaction</name>
+            <sequence>1</sequence>
+            <sys_created_by>pavan.mohan@snc</sys_created_by>
+            <sys_created_on>2019-04-07 16:59:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a9773d63dba0bb401ad77d668c9619e8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+            <sys_updated_on>2019-04-07 17:00:37</sys_updated_on>
+            <value>success</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Failed</label>
+            <language>en</language>
+            <name>x_snc_k19_bf_wallet_transaction</name>
+            <sequence>2</sequence>
+            <sys_created_by>pavan.mohan@snc</sys_created_by>
+            <sys_created_on>2019-04-07 16:59:48</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fb877d63dba0bb401ad77d668c961970</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+            <sys_updated_on>2019-04-07 17:00:39</sys_updated_on>
+            <value>failed</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <name>x_snc_k19_bf_wallet_transaction</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>pavan.mohan@snc</sys_created_by>
+            <sys_created_on>2019-04-07 16:59:33</sys_created_on>
+            <sys_id>94877d63dba0bb401ad77d668c96196b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>status</sys_name>
+            <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+            <sys_update_name>sys_choice_x_snc_k19_bf_wallet_transaction_status</sys_update_name>
+            <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+            <sys_updated_on>2019-04-07 16:59:33</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

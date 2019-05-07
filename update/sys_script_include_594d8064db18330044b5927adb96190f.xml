@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_k19_bf.WalletUtils</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>WalletUtils</name>
+        <script><![CDATA[var WalletUtils = Class.create();
+WalletUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	getMyDefaultWalletSysID: function() {
+		var wallet = new GlideRecord('x_snc_k19_bf_wallet');
+		wallet.addQuery('user', gs.getUserID());
+		wallet.addQuery('active', "true");
+		wallet.setLimit(1);
+		wallet.orderByDesc('sys_created_on');
+		wallet.query();
+		if(wallet.next()) {
+			return wallet.getValue('sys_id');
+		}
+		return "";
+	},
+	
+	getData: function() {
+		var table = this.getParameter("sysparm_table");
+		var sys_id = this.getParameter("sysparm_sys_id") + "";
+		var encode_query = this.getParameter("sysparm_query") + "";
+		var columns = this.getParameter("sysparm_columns") + "";
+		// @TODO: GlideRecord any these params
+		
+	},
+	
+	setData: function() {
+		// @TODO: Set data on GlideRecord on params like the above one
+	},
+	
+    type: 'WalletUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 15:18:47</sys_created_on>
+        <sys_id>594d8064db18330044b5927adb96190f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>WalletUtils</sys_name>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_script_include_594d8064db18330044b5927adb96190f</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-31 16:50:27</sys_updated_on>
+    </sys_script_include>
+</record_update>

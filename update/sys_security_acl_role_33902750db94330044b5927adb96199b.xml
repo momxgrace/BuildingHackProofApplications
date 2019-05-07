@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 12:02:52</sys_created_on>
+        <sys_id>33902750db94330044b5927adb96199b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_snc_k19_bf_wallet_transaction.x_snc_k19_bf.wallet_user</sys_name>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_security_acl display_value="x_snc_k19_bf_wallet_transaction">3b902750db94330044b5927adb961997</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_33902750db94330044b5927adb96199b</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-16 14:56:41</sys_updated_on>
+        <sys_user_role display_value="x_snc_k19_bf.wallet_user" name="x_snc_k19_bf.wallet_user">868a9f1cdb54330044b5927adb9619cd</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

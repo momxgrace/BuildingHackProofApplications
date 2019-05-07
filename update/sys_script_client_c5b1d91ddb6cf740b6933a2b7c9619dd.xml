@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>sys_created_on</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Transaction Access Log</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	var user = g_user.userName;
+	var message = "";
+	if(!g_form.isNewRecord()) 
+		message = user + " accessed wallet transaction: " + g_form.getValue("number");
+	else
+		message = user + " began new wallet transaction: " + g_form.getValue("number");
+	
+	var util = new GlideAjax("WalletSecurityUtil");
+	util.addParam("sysparm_name", "logAjax");
+	util.addParam("sysparm_message", message);
+	util.addParam("sysparm_source", "wallet.transaction");
+	util.addParam("sysparm_user", g_user.userID);
+	util.getXMLAnswer(utilCallback);
+}
+
+function utilCallback(response) {
+	return;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-31 14:28:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c5b1d91ddb6cf740b6933a2b7c9619dd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Transaction Access Log</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_script_client_c5b1d91ddb6cf740b6933a2b7c9619dd</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-31 15:18:49</sys_updated_on>
+        <table>x_snc_k19_bf_wallet_transaction</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_snc_k19_bf.wallet_admin" name="x_snc_k19_bf.wallet_admin">dc4f1310db94330044b5927adb961959</contains>
+        <role display_value="x_snc_k19_bf.wallet_security_admin" name="x_snc_k19_bf.wallet_security_admin">634f5310db94330044b5927adb961965</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 12:30:32</sys_created_on>
+        <sys_id>4df6ef54db94330044b5927adb9619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_k19_bf.wallet_admin.x_snc_k19_bf.wallet_security_admin</sys_name>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_user_role_contains_4df6ef54db94330044b5927adb9619b5</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-16 12:30:32</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

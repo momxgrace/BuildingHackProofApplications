@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="K19: Wallet">1107ef54db94330044b5927adb9619bd</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter table="x_snc_k19_bf_wallet">userDYNAMIC90d1921e5f510100a9ad2572f2b477fe^EQ<item endquery="false" field="user" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>My Wallet Account</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_snc_k19_bf_wallet</name>
+        <order>10</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles>x_snc_k19_bf.wallet_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 12:33:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df67a794db94330044b5927adb9619d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Wallet Account</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_app_module_df67a794db94330044b5927adb9619d1</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-16 12:33:42</sys_updated_on>
+        <timeline_page/>
+        <title>My Wallet Account</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

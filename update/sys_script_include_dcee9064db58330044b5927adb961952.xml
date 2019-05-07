@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_k19_bf.WalletSecurityUtil</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>WalletSecurityUtil</name>
+        <script><![CDATA[var WalletSecurityUtil = Class.create();
+WalletSecurityUtil.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	log: function(message, source, user) {
+		if("true" == gs.getProperty("x_snc_k19_bf.wallet_security_logging")) {
+			var security_log = new GlideRecord("x_snc_k19_bf_wallet_security_log");
+			security_log.initialize();
+			security_log.setValue("message", message);
+			security_log.setValue("source", source);
+			security_log.setValue("user", user);
+			security_log.insert();
+		}
+	},
+	
+	logAjax: function() {
+		var user = this.getParameter("sysparm_user")?this.getParameter("sysparm_user"):gs.getUserID();
+		this.log(this.getParameter("sysparm_message"), this.getParameter("sysparm_source"), user);
+	},
+	
+	deleteLogAjax: function() {
+		var sys_id = this.getParameter("sysparm_sys_id");
+		var log = new GlideRecord("x_snc_k19_bf_wallet_security_log");
+		if(log.get(sys_id))
+			log.deleteRecord();
+	},
+	
+	updateLogAjax: function() {
+		var sys_id = this.getParameter("sysparm_sys_id");
+		var message = this.getParameter("sysparm_message");
+		var source = this.getParameter("sysparm_message");
+		var user = this.getParameter("sysparm_user")?this.getParameter("sysparm_user"):gs.getUserID();
+		var log = new GlideRecord("x_snc_k19_bf_wallet_security_log");
+		if(log.get(sys_id)) {
+			log.setValue("message", message);
+			log.setValue("source", source);
+			log.setValue("user", user);
+			log.update();
+		}
+			
+	},
+	
+    type: 'WalletSecurityUtil'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 16:35:12</sys_created_on>
+        <sys_id>dcee9064db58330044b5927adb961952</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>WalletSecurityUtil</sys_name>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_script_include_dcee9064db58330044b5927adb961952</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-03-31 15:17:04</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_snc_k19_bf_recent_transactions.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate var="jvar_gr" object="true">
+		var gr = new GlideRecord('x_snc_k19_bf_wallet_transaction');
+		gr.orderByDesc('sys_created_on');
+		gr.setLimit(20);
+		gr.query();
+		gr;
+	</g:evaluate>
+	
+	<div class="compact" style="padding: 5px;">
+		<h3>Recent 20 Wallet Transactions</h3>
+		<j:if test="${jvar_gr.hasNext()}">
+			<table class="table table-hover original-table list-grid" style="cursor: default; user-select: text;">
+				<thead class="table-body-headers">
+					<tr class="table-header">
+						<th class="table-column-header">
+							<a class="sort-columns">Transaction ID</a>
+						</th>
+						<th class="table-column-header">
+							<a class="sort-columns">Amount</a>
+						</th>
+						<th class="table-column-header">
+							<a class="sort-columns">Transaction Time</a>
+						</th>
+						<th class="table-column-header">
+							<a class="sort-columns">User Note (HTML)</a>
+						</th>
+						<th class="table-column-header">
+							<a class="sort-columns">Transacted By</a>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="list_table_tbody">
+					<j:while test="${jvar_gr.next()}">
+						<tr class="data_row">
+							<td class="vt grid-field">
+								<span><a href="/x_snc_k19_bf_wallet_transaction.do?sys_id=${jvar_gr.getValue('sys_id')}" target="_blank">${jvar_gr.getValue('number')}</a></span>
+							</td>
+							<td class="vt grid-field">
+								<span>${jvar_gr.getValue('amount')}</span>
+							</td>
+							<td class="vt grid-field">
+								<span>${jvar_gr.getValue('sys_created_on')}</span>
+							</td>
+							<td class="vt grid-field">
+								<span><g:no_escape>${jvar_gr.getValue('html_note')}</g:no_escape></span>
+							</td>
+							<td class="vt grid-field">
+								<span><a href="/sys_user_list.do?sysparm_query=user_name=${jvar_gr.getValue('sys_created_by')}" target="_blank">${jvar_gr.getValue('sys_created_by')}</a></span>
+							</td>
+						</tr>
+					</j:while>
+				</tbody>
+			</table>
+		</j:if>
+		
+		<script>
+			var message = "Accessed recent transactions";
+			var util = new GlideAjax("WalletSecurityUtil");
+			util.addParam("sysparm_name", "logAjax");
+			util.addParam("sysparm_message", message);
+			util.addParam("sysparm_source", "wallet.recent.transaction");
+			util.getXMLAnswer(utilCallback);
+
+
+			function utilCallback(response) {
+				return;
+			}
+		</script>
+	</div>
+</j:jelly>]]></html>
+        <name>recent_transactions</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 12:49:15</sys_created_on>
+        <sys_id>35f8abd4db94330044b5927adb961964</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>recent_transactions</sys_name>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_ui_page_35f8abd4db94330044b5927adb961964</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-04-07 17:24:36</sys_updated_on>
+    </sys_ui_page>
+</record_update>

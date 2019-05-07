@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Wallet Transaction" language="en" table="x_snc_k19_bf_wallet_transaction">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Wallet Transaction</label>
+            <language>en</language>
+            <name>x_snc_k19_bf_wallet_transaction</name>
+            <plural>Wallet Transactions</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>pavan.mohan@snc</sys_created_by>
+            <sys_created_on>2019-03-16 12:02:52</sys_created_on>
+            <sys_id>4b7d54dadb0d3b801ad77d668c961909</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Wallet Transaction</sys_name>
+            <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_k19_bf_wallet_transaction__en</sys_update_name>
+            <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+            <sys_updated_on>2019-03-16 12:02:52</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

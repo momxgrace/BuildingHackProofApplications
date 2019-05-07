@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snc_k19_bf_wallet_transaction</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Balance update on transaction</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var security_util = new WalletSecurityUtil();
+	
+	if(current.from == current.to) {
+		current.setAbortAction(true);
+		gs.addErrorMessage("From and To should be different accounts");
+		security_util.log(gs.getUserName() + " tried to transact with same wallet accounts", "Transactions");
+	} else if(current.amount <= 0) {
+		current.setAbortAction(true);
+		gs.addErrorMessage("Amount should be more than 0");
+		security_util.log(gs.getUserName() + " tried to transact with transaction amount <= 0", "Transactions");
+	} else {
+		// First Debit from the 'from'
+		var from_wallet = new GlideRecord('x_snc_k19_bf_wallet');
+		from_wallet.addQuery("active", "true");
+		from_wallet.addQuery("sys_id", current.from);
+		from_wallet.query();
+		if(from_wallet.next()) {
+			// if the 'from' has balance
+			if(from_wallet.getValue('balance') >= parseFloat(current.amount)) {
+				from_wallet.setValue('balance', parseFloat((parseFloat(from_wallet.getValue('balance')) - parseFloat(current.amount))));
+				// credit to 'to' if the debit is successfull
+				if(from_wallet.update()) { 
+					var to_wallet = new GlideRecord('x_snc_k19_bf_wallet');
+					to_wallet.addQuery("active", "true");
+					to_wallet.addQuery("sys_id", current.to);
+					to_wallet.query();
+						if(to_wallet.next()) {
+						to_wallet.setValue('balance', parseFloat(parseFloat(to_wallet.getValue('balance')) + parseFloat(current.amount)));
+						to_wallet.update();
+						security_util.log(gs.getUserName() + " made a successful transaction of value " + current.amount, "Transactions");
+					}
+					else {
+						// Failed? Refund to 'from'
+						from_wallet.setValue('balance', parseFloat((parseFloat(from_wallet.getValue('balance')) + parseFloat(current.amount))));
+						from_wallet.update();
+						security_util.log(gs.getUserName() + " transaction had invalid reciepient account. Refunded transaction value.", "Transactions");
+						current.setAbortAction(true);
+						gs.addErrorMessage("Invalid To acount");
+					}
+				}
+			} else {
+				current.setAbortAction(true);
+				gs.addErrorMessage("Insufficient balance");
+				security_util.log(gs.getUserName() + " tried to transact with acccount having insufficient balance", "Transactions");
+			}
+		}	
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>pavan.mohan@snc</sys_created_by>
+        <sys_created_on>2019-03-16 14:18:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2b1fb758dbd4330044b5927adb96196c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Balance update on transaction</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="K19: Break &amp; Fix" source="x_snc_k19_bf">f4f81798db54330044b5927adb9619b0</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="K19: Break &amp; Fix">f4f81798db54330044b5927adb9619b0</sys_scope>
+        <sys_update_name>sys_script_2b1fb758dbd4330044b5927adb96196c</sys_update_name>
+        <sys_updated_by>pavan.mohan@snc</sys_updated_by>
+        <sys_updated_on>2019-04-07 17:23:00</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=2b1fb758dbd4330044b5927adb96196c"/>
+</record_update>
